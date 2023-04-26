@@ -4,7 +4,7 @@
 #include <time.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include "sem.h"
+#include "sem.h"    
 
 #define CHILD      			 0  		/* Return value of child process from fork call */
 #define TRUE       			 0  
