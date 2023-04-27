@@ -61,7 +61,7 @@ int main() {
 		exit(1);
 	}
 	
-	if (pid == CHILD){
+	if (pid == CHILD) {
 	    //First Child Process. 
         //Dad tries to do some updates.
         //**you need to identify the logical issues and synchronization issues and solve them using logic and semaphores.**
