@@ -62,9 +62,6 @@ int main() {
 	}
 	
 	if (pid == CHILD) {
-	    //First Child Process. 
-        //Dad tries to do some updates.
-        //**you need to identify the logical issues and synchronization issues and solve them using logic and semaphores.**
 	    printf("Dad's Pid: %d\n",getpid());
 		N=NumOfDepositAttempt;
 		for(i=1;i<=N; i++)
@@ -115,9 +112,6 @@ int main() {
 		if (pid == CHILD)
 		{
 			printf("First Son's Pid: %d\n",getpid());
-			//Second child process. 
-            //**you need to identify the logical issues and synchronization issues and solve them using logic and semaphores.**
-            //Son1 tries to view the balance
 			flag = FALSE;
 			while(flag == FALSE) 
 			{
@@ -181,9 +175,6 @@ int main() {
 			if (pid == CHILD)
 			{
 				printf("Second Son's Pid: %d\n",getpid()); 
-				//Third child process. 
-                //**you need to identify the logical issues and synchronization issues and solve them using logic and semaphores.**
-                //Son2 tries to view the balance.
 				flag1 = FALSE;
 				while(flag1 == FALSE) 
 				{
