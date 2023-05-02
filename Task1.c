@@ -79,11 +79,8 @@ int main() {
 				r = rand()%5+1;
 				printf("Dad wants to deposit money\n");
 				printf("Dad needs %d sec to prepare money.\n", r); 		
-				sleep(r); //Dad Process is sleeping for r sec. You need to make sure that other processes can work in the mean time.
-				//After some time Dad process wakes up.
-				//It is possible that the balance has changed during the time dad process is sleeping
-				//Dad process starts to deposit the money. So Dad process needs the access to ATM.
-				//Only after getting access to the ATM dad process can deposit money.
+				sleep(r); 
+		
 				fseek(fp1,0L,0); //Dad will now deposit the money. And update the current balance.
 				bal2 += DepositAmount;
 				fprintf(fp1, "%d \n", bal2);
@@ -99,7 +96,6 @@ int main() {
 	
 	else
 	{ 
-		
 		//Parent Process. Fork off another child process.
 		if ((pid = fork()) == -1)
 		{
@@ -132,10 +128,10 @@ int main() {
 					}
 					else
 					{
-						fp2 = fopen("balance.txt", "r+");//Son_1 reads the balance. 
+						fp2 = fopen("balance.txt", "r+"); //Son_1 reads the balance. 
 						fscanf(fp2,"%d", &bal2);
 						printf("SON_1 reads balance. Available Balance: %d \n", bal2); 
-						printf("SON_1 wants to withdraw money. "); //And if balance is greater than Withdraw amount, then son can withdraw money.
+						printf("SON_1 wants to withdraw money. "); 
 
 						// Whenever the balance is 0 or lower
 						if (bal2 <= 0 || WithdrawAmount > bal2) {
@@ -149,8 +145,8 @@ int main() {
 							fprintf(fp2,"%d\n", bal2);
 							fclose(fp2);
 							printf("SON_1 withdrawed %d. New Balance: %d \n",WithdrawAmount, bal2);
-							fseek(fp3,0L, 0); //SON_1 will write the number of  attempt remaining in the attampt.txt file.
-							N_Att -=1;
+							fseek(fp3,0L, 0); 
+							N_Att -= 1;
 							fprintf(fp3, "%d\n", N_Att);
 							fclose(fp3);
 							printf("Number of attempts remaining:%d \n", N_Att);
