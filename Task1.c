@@ -20,7 +20,7 @@
 // creating the perms for access
 #define PERMS                0666	
 
-FILE *fp1, *fp2, *fp3, *fp4;			/* File Pointers */
+FILE *fp1, *fp2, *fp3, *fp4;			
 
 int main() {
 	int pid;						// Process ID after fork call
@@ -33,7 +33,6 @@ int main() {
 	srand(time(NULL));
 
 	//Initialize the file balance to be $40
-	//You should try with different initial balance, after you formulate the solution. Like initial Balance to be 0.
 	fp1 = fopen("balance.txt","w+");
 	bal1 = initBalance;
 	fprintf(fp1, "%d\n", bal1);
