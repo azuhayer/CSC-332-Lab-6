@@ -10,8 +10,8 @@
 #define TRUE       			 0  
 #define FALSE      			 1
 
-#define NumOfDepositAttempt  1           /* How many times Dad will deposit money */
-#define NumOfWithdrawAttempt 2          /* Total number of attempts SON_1 and SON_2 has */
+#define NumOfDepositAttempt  5           /* How many times Dad will deposit money */
+#define NumOfWithdrawAttempt 20          /* Total number of attempts SON_1 and SON_2 has */
 
 #define DepositAmount        80         /* The amound of money Dad deposits at a time */
 #define WithdrawAmount       20         /* The amount of money Son withdraws at a time */
